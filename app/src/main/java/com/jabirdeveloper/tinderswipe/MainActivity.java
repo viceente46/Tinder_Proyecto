@@ -43,16 +43,16 @@ public class MainActivity extends AppCompatActivity {
             public void onCardSwiped(Direction direction) {
                 Log.d(TAG, "onCardSwiped: p=" + manager.getTopPosition() + " d=" + direction);
                 if (direction == Direction.Right){
-                    Toast.makeText(MainActivity.this, "Direction Right", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Perfil", Toast.LENGTH_SHORT).show();
                 }
                 if (direction == Direction.Top){
-                    Toast.makeText(MainActivity.this, "Direction Top", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Me Gusta", Toast.LENGTH_SHORT).show();
                 }
                 if (direction == Direction.Left){
-                    Toast.makeText(MainActivity.this, "Direction Left", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Bloquear", Toast.LENGTH_SHORT).show();
                 }
                 if (direction == Direction.Bottom){
-                    Toast.makeText(MainActivity.this, "Direction Bottom", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Siguiente", Toast.LENGTH_SHORT).show();
                 }
 
                 // Paginating
