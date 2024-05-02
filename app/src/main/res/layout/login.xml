@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
+    android:background="@drawable/fondo"
     tools:context=".LoginActivity">
 
     <ImageView
@@ -13,23 +14,15 @@
         android:layout_height="215dp"
         android:layout_gravity="center"
         android:layout_marginBottom="32dp"
-        android:src="@drawable/oig1" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="32dp"
-        android:text="TINDNET"
-        android:textColor="@color/colorAccent"
-        android:textSize="24sp" />
+        android:src="@drawable/vicente" />
 
     <EditText
         android:id="@+id/editTextEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:hint="Email" />
+        android:hint="Email"
+        android:textColorHint="@color/cardview_light_background" />
 
     <EditText
         android:id="@+id/editTextPassword"
@@ -37,7 +30,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:hint="Password"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:textColorHint="@color/cardview_light_background" />
 
     <Button
         android:id="@+id/btn_login"
@@ -53,6 +47,6 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Don't have an account? Sign up"
-        android:textColor="@color/colorPrimaryDark" />
+        android:textColor="@color/cardview_light_background" />
 
 </LinearLayout>
