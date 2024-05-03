@@ -43,10 +43,11 @@
         android:textColor="@android:color/white" />
 
     <TextView
+        android:id="@+id/sign_up_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Don't have an account? Sign up"
+        android:text="No tienes cuenta? Sign up"
         android:textColor="@color/cardview_light_background" />
 
 </LinearLayout>
