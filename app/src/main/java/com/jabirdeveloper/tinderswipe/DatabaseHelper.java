@@ -2,6 +2,7 @@ package com.jabirdeveloper.tinderswipe;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -43,4 +44,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         else
             return true;
     }
+    public boolean checkUser(String username, String password) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM Usuario WHERE EMAIL=? AND PASSWORD=?", new String[]{username, password});
+        if (cursor.getCount() > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }

@@ -3,6 +3,8 @@ package com.jabirdeveloper.tinderswipe;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.SpannableString;
@@ -89,12 +91,10 @@ public class LoginActivity extends Activity {
     }
 
 
-    private boolean loginUser(String username, String password) {
-        // Aquí debes implementar la lógica de inicio de sesión
-        // Este es solo un ejemplo y siempre devolverá false
-        String correctUsername = "a";
-        String correctPassword = "a";
 
-        return username.equals(correctUsername) && password.equals(correctPassword);
+
+    private boolean loginUser(String username, String password) {
+        DatabaseHelper db = new DatabaseHelper(this);
+        return db.checkUser(username, password);
     }
 }
