@@ -76,10 +76,10 @@ public class LoginActivity extends Activity {
             }
         };
 
-// Aplicar el ClickableSpan solo al texto "Sign up"
+        // Aplicar el ClickableSpan solo al texto "Sign up"
         spannableString.setSpan(clickableSpan, text.indexOf("Sign up"), text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
-// Establecer el color negro para todo el texto
+        // Establecer el color negro para todo el texto
         spannableString.setSpan(new ForegroundColorSpan(colorBlack), 0, text.indexOf("Sign up"), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         spannableString.setSpan(new ForegroundColorSpan(colorBlack), text.indexOf("Sign up") + "Sign up".length(), text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 

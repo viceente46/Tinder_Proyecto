@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
 
     private List<ItemModel> addList() {
         List<ItemModel> items = new ArrayList<>();
-        items.add(new ItemModel(R.drawable.sample1, "Markonah", "24", "Jember"));
+        items.add(new ItemModel(R.drawable.sample1, "Victoria", "24", "Jember"));
         items.add(new ItemModel(R.drawable.sample2, "Marpuah", "20", "Malang"));
         items.add(new ItemModel(R.drawable.sample3, "Sukijah", "27", "Jonggol"));
         items.add(new ItemModel(R.drawable.sample4, "Markobar", "19", "Bandung"));
