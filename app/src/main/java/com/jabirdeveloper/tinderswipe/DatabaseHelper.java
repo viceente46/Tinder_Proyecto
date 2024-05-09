@@ -10,11 +10,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "TindNet.db";
     private static final String TABLE_NAME = "Usuario";
+    private static final String TABLE_NAME2 = "Empresa";
     private static final String COL_1 = "ID";
     private static final String COL_2 = "Nombre";
     private static final String COL_3 = "Apellido";
     private static final String COL_4 = "EMAIL";
     private static final String COL_5 = "PASSWORD";
+    // Columnas para la tabla Empresa
+    private static final String COL_6 = "EmpresaID";
+    private static final String COL_7 = "NombreEmpresa";
+    private static final String COL_8 = "Direccion";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
