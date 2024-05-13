@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.DiffUtil;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -41,6 +42,15 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onCardSwiped(Direction direction) {
+                Log.d(TAG, "onCardSwiped: p=" + manager.getTopPosition() + " d=" + direction);
+                if (direction == Direction.Right){
+                    ItemModel item = adapter.getItems().get(manager.getTopPosition() - 1);
+                    if (item.getName().equals("Gabriel")) {
+                        Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+                        intent.putExtra("item", item);
+                        startActivity(intent);
+                    }
+                }
                 Log.d(TAG, "onCardSwiped: p=" + manager.getTopPosition() + " d=" + direction);
                 if (direction == Direction.Right){
                     Toast.makeText(MainActivity.this, "Perfil", Toast.LENGTH_SHORT).show();
@@ -112,17 +122,17 @@ public class MainActivity extends AppCompatActivity {
 
     private List<ItemModel> addList() {
         List<ItemModel> items = new ArrayList<>();
-        items.add(new ItemModel(R.drawable.sample1, "Victoria", "24", "Jember"));
-        items.add(new ItemModel(R.drawable.sample2, "Marpuah", "20", "Malang"));
-        items.add(new ItemModel(R.drawable.sample3, "Sukijah", "27", "Jonggol"));
-        items.add(new ItemModel(R.drawable.sample4, "Markobar", "19", "Bandung"));
-        items.add(new ItemModel(R.drawable.sample5, "Marmut", "25", "Hutan"));
+        items.add(new ItemModel(R.drawable.sample1, "Gabriel", "30", "España", "+34 123 456 789", "@gabriel"));
+        items.add(new ItemModel(R.drawable.sample2, "Marpuah", "20", "Malang", "+62 123 456 789", "@marpuah"));
+        items.add(new ItemModel(R.drawable.sample3, "Sukijah", "27", "Jonggol", "+62 987 654 321", "@sukijah"));
+        items.add(new ItemModel(R.drawable.sample4, "Markobar", "19", "Bandung", "+62 456 789 123", "@markobar"));
+        items.add(new ItemModel(R.drawable.sample5, "Marmut", "25", "Hutan", "+62 789 123 456", "@marmut"));
 
-        items.add(new ItemModel(R.drawable.sample1, "Markonah", "24", "Jember"));
-        items.add(new ItemModel(R.drawable.sample2, "Marpuah", "20", "Malang"));
-        items.add(new ItemModel(R.drawable.sample3, "Sukijah", "27", "Jonggol"));
-        items.add(new ItemModel(R.drawable.sample4, "Markobar", "19", "Bandung"));
-        items.add(new ItemModel(R.drawable.sample5, "Marmut", "25", "Hutan"));
+        items.add(new ItemModel(R.drawable.sample1, "Markonah", "24", "Jember", "+62 321 654 987", "@markonah"));
+        items.add(new ItemModel(R.drawable.sample2, "Marpuah", "20", "Malang", "+62 123 456 789", "@marpuah"));
+        items.add(new ItemModel(R.drawable.sample3, "Sukijah", "27", "Jonggol", "+62 987 654 321", "@sukijah"));
+        items.add(new ItemModel(R.drawable.sample4, "Markobar", "19", "Bandung", "+62 456 789 123", "@markobar"));
+        items.add(new ItemModel(R.drawable.sample5, "Marmut", "25", "Hutan", "+62 789 123 456", "@marmut"));
         return items;
     }
 }

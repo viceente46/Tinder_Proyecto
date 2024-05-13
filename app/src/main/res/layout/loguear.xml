@@ -10,16 +10,21 @@
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/linearLayout"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="149dp"
+        android:layout_marginBottom="94dp"
         android:text="Bienvenido"
         android:textColor="@color/cardview_light_background"
         android:textSize="24sp"
         android:textStyle="bold" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tv_title"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="261dp"
         android:orientation="vertical"
         android:padding="16dp">
 
@@ -61,7 +66,8 @@
             android:id="@+id/btn_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Log In" />
+            android:text="Registrate"
+            android:textColorLink="#811717" />
 
     </LinearLayout>
 </RelativeLayout>

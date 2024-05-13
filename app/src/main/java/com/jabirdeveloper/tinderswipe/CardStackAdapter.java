@@ -56,9 +56,9 @@ public class CardStackAdapter extends RecyclerView.Adapter<CardStackAdapter.View
                     .fit()
                     .centerCrop()
                     .into(image);
-            nama.setText(data.getNama());
-            usia.setText(data.getUsia());
-            kota.setText(data.getKota());
+            nama.setText(data.getName());
+            usia.setText(data.getAge());
+            kota.setText(data.getLocation());
         }
     }
 
