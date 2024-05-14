@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="326dp"
+        android:layout_height="216dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/sample5" />
+
+    <TextView
+        android:id="@+id/tvNombre"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tvEdad"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="146dp"
+        android:layout_marginEnd="156dp"
+        android:layout_marginBottom="49dp"
+        android:text="Marmut"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/tvEdad"
+        android:layout_width="100dp"
+        android:layout_height="21dp"
+        android:layout_above="@+id/tvLugar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="149dp"
+        android:layout_marginEnd="146dp"
+        android:layout_marginBottom="65dp"
+        android:text="25 años"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tvLugar"
+        android:layout_width="99dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tvTelefono"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="150dp"
+        android:layout_marginEnd="146dp"
+        android:layout_marginBottom="30dp"
+        android:text="Hutan"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tvTelefono"
+        android:layout_width="157dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tvInstagram"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="124dp"
+        android:layout_marginEnd="114dp"
+        android:layout_marginBottom="49dp"
+        android:text="+62 789 123 456"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tvInstagram"
+        android:layout_width="149dp"
+        android:layout_height="72dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="66dp"
+        android:layout_marginBottom="35dp"
+        android:text="@string/marmut"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="59dp"
+        android:layout_height="58dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="49dp"
+        android:layout_marginBottom="59dp"
+        android:layout_toStartOf="@+id/tvInstagram"
+        app:srcCompat="@drawable/lo" />
+
+</RelativeLayout>

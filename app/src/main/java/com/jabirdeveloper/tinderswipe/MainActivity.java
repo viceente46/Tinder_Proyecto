@@ -62,6 +62,31 @@ public class MainActivity extends AppCompatActivity {
                 }
                 Log.d(TAG, "onCardSwiped: p=" + manager.getTopPosition() + " d=" + direction);
                 if (direction == Direction.Right){
+                    ItemModel item = adapter.getItems().get(manager.getTopPosition() - 1);
+                    if (item.getName().equals("Sukijah")) {
+                        Intent intent = new Intent(MainActivity.this, ProfileActivity1.class);
+                        intent.putExtra("item", item);
+                        startActivity(intent);
+                    }
+                }
+                if (direction == Direction.Right){
+                    ItemModel item = adapter.getItems().get(manager.getTopPosition() - 1);
+                    if (item.getName().equals("Markobar")) {
+                        Intent intent = new Intent(MainActivity.this, ProfileActivity3.class);
+                        intent.putExtra("item", item);
+                        startActivity(intent);
+                    }
+                }
+                if (direction == Direction.Right){
+                    ItemModel item = adapter.getItems().get(manager.getTopPosition() - 1);
+                    if (item.getName().equals("Marmut")) {
+                        Intent intent = new Intent(MainActivity.this, ProfileActivity4.class);
+                        intent.putExtra("item", item);
+                        startActivity(intent);
+                    }
+                }
+                Log.d(TAG, "onCardSwiped: p=" + manager.getTopPosition() + " d=" + direction);
+                if (direction == Direction.Right){
                     Toast.makeText(MainActivity.this, "Perfil", Toast.LENGTH_SHORT).show();
                 }
                 if (direction == Direction.Top){

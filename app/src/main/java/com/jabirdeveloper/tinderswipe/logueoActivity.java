@@ -37,6 +37,20 @@ public class logueoActivity extends Activity {
                     editTextEmail.setError("Email inválido. Debe seguir el patrón xx@xx.xx");
                 } else {
                     // Procede con el inicio de sesión
+                    btnRegister.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            String email = editTextEmail.getText().toString().trim();
+
+                            if (!isValidEmail(email)) {
+                                editTextEmail.setError("Email inválido. Debe seguir el patrón xx@xx.xx");
+                            } else {
+                                // Procede con el inicio de sesión
+                                AddData();
+                            }
+                        }
+                    });
+
                 }
             }
         });
