@@ -5,4 +5,11 @@
     <string name="sukijah">\@sukijah</string>
     <string name="markobar">\@markobar</string>
     <string name="marmut">\@marmut</string>
+        <string-array name="tipos_empresa">
+            <item>Moda </item>
+            <item>Tecnología</item>
+            <item>Construccion</item>
+            <item>Tipo 4</item>
+            <item>Tipo 5</item>
+        </string-array>
 </resources>

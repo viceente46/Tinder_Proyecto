@@ -50,4 +50,12 @@
         android:text="No tienes cuenta? Sign up"
         android:textColor="@color/cardview_light_background" />
 
+    <TextView
+        android:id="@+id/sign_up_empresa_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Registrarse como empresa"
+        android:textColor="@color/cardview_light_background" />
+
 </LinearLayout>

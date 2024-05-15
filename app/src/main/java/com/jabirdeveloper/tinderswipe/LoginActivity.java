@@ -23,6 +23,7 @@ public class LoginActivity extends Activity {
     private EditText usernameField;
     private EditText passwordField;
     private Button loginButton;
+    private TextView signUpEmpresaText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,7 @@ public class LoginActivity extends Activity {
         usernameField = (EditText) findViewById(R.id.editTextEmail);
         passwordField = (EditText) findViewById(R.id.editTextPassword);
         loginButton = (Button) findViewById(R.id.btn_login);
+        signUpEmpresaText = findViewById(R.id.sign_up_empresa_text);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,16 +53,24 @@ public class LoginActivity extends Activity {
             }
         });
 
+        signUpEmpresaText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, LoginEmpresa.class);
+                startActivity(intent);
+            }
+        });
+
         @SuppressLint({"MissingInflatedId", "LocalSuppress"})
         TextView signUpText = findViewById(R.id.sign_up_text);
         String text = "No tienes cuenta? Sign up";
         SpannableString spannableString = new SpannableString(text);
 
-// Definir los colores
+        // Definir los colores
         int colorBlack = Color.BLACK;
         int colorBlue = Color.BLUE;
 
-// Definir el ClickableSpan
+        // Definir el ClickableSpan
         ClickableSpan clickableSpan = new ClickableSpan() {
             @Override
             public void onClick(View textView) {
@@ -86,12 +96,7 @@ public class LoginActivity extends Activity {
         signUpText.setText(spannableString);
         signUpText.setMovementMethod(LinkMovementMethod.getInstance());
         signUpText.setHighlightColor(Color.TRANSPARENT); // Para quitar el color de resaltado
-
-
     }
-
-
-
 
     private boolean loginUser(String username, String password) {
         DatabaseHelper db = new DatabaseHelper(this);
