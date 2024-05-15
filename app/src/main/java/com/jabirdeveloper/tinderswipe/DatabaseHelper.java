@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "TindNet.db";
+    private static final int DATABASE_VERSION = 2; // Incrementa la versión de la base de datos
     private static final String TABLE_NAME = "Usuario";
     private static final String NEW_TABLE_NAME2 = "Empresa"; // Nuevo nombre de la tabla
     private static final String COL_1 = "ID";
@@ -21,8 +22,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COL_7 = "NombreEmpresa";
     private static final String COL_8 = "Direccion";
 
+
     public DatabaseHelper(Context context) {
-        super(context, DATABASE_NAME, null, 1);
+        super(context, DATABASE_NAME, null, DATABASE_VERSION); // Pasa la nueva versión de la base de datos
     }
 
     @Override
@@ -33,9 +35,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME);
-        db.execSQL("DROP TABLE IF EXISTS "+NEW_TABLE_NAME2); // Eliminar la nueva tabla si existe
-        onCreate(db);
+        if (oldVersion < 2) {
+            db.execSQL("CREATE TABLE " + NEW_TABLE_NAME2 + " (EmpresaID INTEGER PRIMARY KEY AUTOINCREMENT, NombreEmpresa TEXT, Direccion TEXT)"); // Crear la nueva tabla si la versión de la base de datos es menor a 2
+        }
     }
 
     public boolean insertData(String nombre, String apellido, String email, String password) {
