@@ -53,6 +53,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         else
             return true;
     }
+
+
+        public boolean insertEmpresa(String nombreEmpresa, String direccion) {
+            SQLiteDatabase db = this.getWritableDatabase();
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(COL_7, nombreEmpresa);
+            contentValues.put(COL_8, direccion);
+            long result = db.insert(NEW_TABLE_NAME2, null, contentValues);
+            return result != -1;
+        }
+
+
+
     public boolean checkUser(String username, String password) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM Usuario WHERE EMAIL=? AND PASSWORD=?", new String[]{username, password});

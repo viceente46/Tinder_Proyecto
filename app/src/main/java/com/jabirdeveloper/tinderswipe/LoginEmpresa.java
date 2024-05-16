@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class LoginEmpresa extends Activity {
     private EditText editTextNombre;
@@ -20,6 +21,7 @@ public class LoginEmpresa extends Activity {
     private EditText editTextTelefono;
     private EditText editTextEmail;
     private Button btnSeleccionarImagen;
+    private Button btnInsertar;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -33,6 +35,7 @@ public class LoginEmpresa extends Activity {
         editTextDireccion = findViewById(R.id.editTextDirecc);
         editTextTelefono = findViewById(R.id.editTextTelf);
         editTextEmail = findViewById(R.id.editTextEmail);
+        btnInsertar = findViewById(R.id.btnInsertar);
         btnSeleccionarImagen = findViewById(R.id.btnSeleccionarImagen);
 
         btnSeleccionarImagen.setOnClickListener(new View.OnClickListener() {
@@ -40,6 +43,23 @@ public class LoginEmpresa extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(intent, 100);
+            }
+        });
+
+        btnInsertar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String nombreEmpresa = editTextNombre.getText().toString();
+                String direccion = editTextDireccion.getText().toString();
+
+                DatabaseHelper db = new DatabaseHelper(LoginEmpresa.this);
+                boolean insertSuccessful = db.insertEmpresa(nombreEmpresa, direccion);
+
+                if (insertSuccessful) {
+                    Toast.makeText(LoginEmpresa.this, "Inserción exitosa", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(LoginEmpresa.this, "Inserción fallida", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

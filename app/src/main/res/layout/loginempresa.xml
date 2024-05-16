@@ -62,4 +62,10 @@
         android:layout_height="wrap_content"
         android:text="Seleccionar imagen" />
 
+    <Button
+        android:id="@+id/btnInsertar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Insertar" />
+
 </LinearLayout>
